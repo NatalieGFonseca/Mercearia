@@ -1,0 +1,68 @@
+<%- include ('assets/head') %>
+    <title>Visualização dos produtos</title>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <h3>Categorias</h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 20px;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Limpeza</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Higiene pessoal</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Padaria
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Horti fruti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Bebidas</a>
+                        </li>
+                    </ul>
+
+                    
+                    <form class="d-flex" action="/cadastro/produtos" method="GET" style="margin-right: 5px;">
+                        <button class="btn btn-outline-success" type="submit">Adicionar<i class="fas fa-plus"
+                                style="padding-left: 5px; text-align: center;"></i></button>
+                    </form>
+
+                    <form class="d-flex" action="/home" method="GET" style="margin-right: 5px;">
+                        <button class="btn btn-outline-success" type="submit">Voltar<i class="fas fa-arrow-left"
+                                style="padding-left: 5px; text-align: center;"></i></button>
+                    </form>
+                    <form class="d-flex" action="/" method="GET" style="margin-right: 5px;">
+                        <button class="btn btn-outline-success" type="submit">Sair<i class="fas fa-sign-out-alt"
+                                style="padding-left: 5px; text-align: center;"></i></button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- PRODUTOS -->
+        <%- include('produtos') %>
+
+    </body>
+
+    <script src="/js/scripts.js"></script>

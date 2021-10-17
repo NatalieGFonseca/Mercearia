@@ -1,0 +1,93 @@
+
+body{
+    background-color: whitesmoke;
+    font-size: large;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+a{
+    color: rgb(117, 115, 115);
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: 0.7;
+}
+
+.logo{
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+p{
+    color: rgb(117, 115, 115);
+    text-align: justify;
+}
+
+.titulo{
+    color:  #66BB22;
+    text-align:center;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color:  #66BB22;
+    font-weight: bold;
+}
+
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.texto{
+    color: white;
+}
+
+.homeButton{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn, .btn:hover, .btn:active, .btn:focus{
+    border: 2px solid rgb(25, 100, 25);
+    border-radius: 100px;
+    background-color:  #66BB22;
+    color: white;
+    text-decoration: none;
+}
+
+.botao{
+    margin-top: 5px;
+}
+
+label {
+    margin-top: 5px;
+}
+.navbar{
+    font-size: large;
+    font-weight: bold;
+}
+
+section{
+    margin-top: 20px;
+}
+
+.info{
+    font-size: 45px large;
+}
+
+.itens-menu{
+    color: #66BB22;
+}
+
+li{
+    list-style-type:none;
+}
+
+  footer{
+    background-color: rgb(197, 191, 191);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  

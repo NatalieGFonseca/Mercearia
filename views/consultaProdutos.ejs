@@ -1,0 +1,61 @@
+<%- include ('assets/head') %>
+
+    <title>Consulta produtos</title>
+    <style>
+    
+        .flex-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .container-box {
+            height: 200px;
+          }
+          
+          .content-box {
+            text-align: justify;
+          }
+        </style>
+    <%- include('assets/menu') %>
+
+        <body>
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row flex-box">
+                        <div class="col-lg-8 content-box">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Consultas</h5>
+                                    <form action="/home" method="post">
+                                        <div class="mb-3">
+                                            <label for="nome" class="form-label">Digite o que procura</label>
+                                            <input type="text" class="form-control" id="nome" name="nome" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label>Filtre por:</label>
+                                        </div>
+
+                                        <div class="mb-3" style="text-align: center;">
+                                            <input type="radio" id="test1" name="radio-group" checked>
+                                            <label for="test1" style="margin-right: 55px;">Fornecedor</label>
+                                            <input type="radio" id="test1" name="radio-group" checked>
+                                            <label for="test1" style="margin-right: 55px;">Tipo</label>
+                                        </div>
+
+                                        <div>
+                                            <button type="submit" class="btn btn-outline-success"
+                                                style="float: right; margin-bottom: 10px;">Consultar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </body>
+
+        <script src="/js/scripts.js"></script>

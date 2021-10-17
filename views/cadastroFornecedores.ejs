@@ -1,0 +1,52 @@
+<%- include ('assets/head') %>
+
+<title>Cadastro Fornecedores</title>
+
+<%- include('assets/menu') %> 
+
+<body>
+    
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-9">
+                        <div class="row g-0">
+                            <div class="col-lg-6" style="text-align: center;">
+                                <img src="/imagens/welcome.svg" class="img-fluid rounded-start" style="text-align: center; margin-top: 10px;" alt="imagem de login usuário" width="450" height="450">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h3 style="text-align: center;">Cadastro</h3>
+                                    <form action="/home" method="post">
+                                        <div class="mb-3">
+                                            <label for="nome" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="nome" name="nome" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="telefone" class="form-label">Telefone</label>
+                                            <input type="number" class="form-control" id="telefone" name="telefone" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="tipo" class="form-label">Tipo</label>
+                                            <input type="text" class="form-control" id="tipo" name="tipo" required>
+                                        </div>
+                                        
+                                        <div>
+                                            <button type="submit" class="btn btn-outline-success" style="float: right; margin-bottom: 10px;">Cadastrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/scripts.js"></script>
