@@ -24,20 +24,19 @@ app.get('/', (req, res) =>{
 });
 
 app.get('/produtos', (req, res) =>{
-    res.render('visualizaProdutos');
+    res.render('produtos/visualiza');
 });
 
 app.get('/cadastro/produtos', (req, res) =>{
-    res.render('cadastroProdutos');
+    res.render('produtos/cadastro');
 });
 
-
 app.get('/cadastro/fornecedores', (req, res) =>{
-    res.render('cadastroFornecedores');
+    res.render('fornecedores/cadastro');
 });
 
 app.get('/consulta', (req, res) =>{
-    res.render('consultaProdutos');
+    res.render('consultas');
 });
 
 app.get('*', (req, res)=>{

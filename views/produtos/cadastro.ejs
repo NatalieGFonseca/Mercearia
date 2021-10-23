@@ -1,9 +1,7 @@
-<%- include ('assets/head') %>
+<%- include ('../assets/head') %>
 
-<title>Cadastro Fornecedores</title>
-
-<%- include('assets/menu') %> 
-
+<title>Cadastro produtos</title>
+<%- include('../assets/menu') %> 
 <body>
     
     <div class="container-fluid">
@@ -24,22 +22,18 @@
                                             <input type="text" class="form-control" id="nome" name="nome" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="telefone" class="form-label">Telefone</label>
-                                            <input type="number" class="form-control" id="telefone" name="telefone" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email" name="email" required>
-                                        </div>
-                                        <div class="mb-3">
                                             <label for="tipo" class="form-label">Tipo</label>
                                             <input type="text" class="form-control" id="tipo" name="tipo" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="preco" class="form-label">Preço</label>
+                                            <input type="number" class="form-control" id="preco" name="preco" required>
                                         </div>
                                         
                                         <div>
                                             <button type="submit" class="btn btn-outline-success" style="float: right; margin-bottom: 10px;">Cadastrar</button>
                                         </div>
-                                    </form>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -49,4 +43,5 @@
         </div>
     </div>
 </body>
+
 <script src="/js/scripts.js"></script>

@@ -26,10 +26,27 @@
                         <div class="col-lg-8 content-box">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Consultas</h5>
+                                    <h5 class="card-title">Consulte usuário logado</h5>
                                     <form action="/home" method="post">
                                         <div class="mb-3">
-                                            <label for="nome" class="form-label">Digite o que procura</label>
+                                            <label for="nome" class="form-label">Digite o nome do funcionário</label>
+                                            <input type="text" class="form-control" id="nome" name="nome" required>
+                                        </div>
+
+                                        <div>
+                                            <button type="submit" class="btn btn-outline-success"
+                                                style="float: right; margin-bottom: 10px;">Consultar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Consulte produto por fornecedor</h5>
+                                    <form action="/home" method="post">
+                                        <div class="mb-3">
+                                            <label for="nome" class="form-label">Digite o produto</label>
                                             <input type="text" class="form-control" id="nome" name="nome" required>
                                         </div>
 
@@ -51,6 +68,7 @@
                                     </form>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
