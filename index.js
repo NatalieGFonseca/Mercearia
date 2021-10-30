@@ -31,6 +31,10 @@ app.get('/cadastro/produtos', (req, res) =>{
     res.render('produtos/cadastro');
 });
 
+app.get('/edicao/produtos', (req, res)=>{
+    res.render('produtos/cadastro');
+});
+
 app.get('/cadastro/fornecedores', (req, res) =>{
     res.render('fornecedores/cadastro');
 });
