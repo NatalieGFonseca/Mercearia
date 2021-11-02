@@ -8,11 +8,12 @@
                         <h5 class="card-title">Produto</h5>
                         <p>Nome: </p>
                         <p>Preço:</p>
-                        <button class="btn btn-outline-success" style=" padding-bottom: 5px;  margin-right: 5px; float: right;">Excluir<i class="far fa-trash-alt"
+                        <button class="btn btn-outline-success" style=" padding-bottom: 5px;  margin-right: 5px; float: right;">
+                            <a href="/produtos/<%= produto.id %> " style="color: white;">Excluir</a><i class="far fa-trash-alt"
                                 style="padding-left: 5px; text-align: center;"></i>
                         </button>
                         <button class="btn btn-outline-success" style=" padding-bottom: 5px; margin-right: 5px; float: right;">
-                            <a href="/edicao/produtos" style="color: white;">Editar</a>
+                            <a href="/produtos/<%=produto.id%>/edite" style="color: white;">Editar</a>
                             <i class="far fa-edit" style="padding-left: 5px;"></i>
                         </button>
                     </div>
@@ -26,11 +27,11 @@
                         <p>Nome: </p>
                         <p>Preço:</p>
                         <button class="btn btn-outline-success" style=" padding-bottom: 5px;  margin-right: 5px; float: right;">
-                            Excluir
-                            <i class="far fa-trash-alt" style="padding-left: 5px; text-align: center;"></i>
+                            <a href="/produtos/<%= produto.id %> " style="color: white;">Excluir</a><i class="far fa-trash-alt"
+                                style="padding-left: 5px; text-align: center;"></i>
                         </button>
                         <button class="btn btn-outline-success" style=" padding-bottom: 5px; margin-right: 5px; float: right;">
-                            <a href="/edicao/produtos" style="color: white;">Editar</a>
+                            <a href="/produtos/<%=produto.id%>/edite" style="color: white;">Editar</a>
                             <i class="far fa-edit" style="padding-left: 5px;"></i>
                         </button>
                     </div>
