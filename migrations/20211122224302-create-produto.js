@@ -2,9 +2,10 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('funcionario', { 
-      cpf: {
-        type: Sequelize.STRING,
+    await queryInterface.createTable('produto', { 
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
         allowNull: false
       },
@@ -12,31 +13,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      telefone: {
-          type: Sequelize.INTEGER,
-          allowNull: false
-      },
-      funcao: {
+      tipo: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      rua: {
-        type: Sequelize.STRING,
+      preco_unitario: {
+        type: Sequelize.FLOAT,
         allowNull: false
       },
-      bairro: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      data_nascimento: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      id_user: {
+      id_fornecedor: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'usuario',
+          model: 'fornecedor',
           key: 'id'
         }
       },
@@ -55,6 +44,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('funcionario');
+    await queryInterface.dropTable('produto');
   }
 };
