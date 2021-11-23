@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const {usuarios, produtos, fornecedores, funcionarios} = require('./controllers');
 const methodOverride = require('method-override');
 
 app.set('view engine','ejs');
@@ -11,6 +12,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use(methodOverride('_method'));
+
+app.use('/fornecedores', fornecedores);
 
 /* ROTAS */
 app.get('/home', (req, res)=>{
@@ -27,6 +30,7 @@ app.get('/', (req, res) =>{
 });
 
 /* PRODUTOS */
+/*
 app.get('/produtos', (req, res) =>{
     res.render('produtos/visualiza');
 });
@@ -54,17 +58,21 @@ app.delete('/produtos/:id',(req, res)=>{
     const {id}= req.params;
     res.redirect('/produtos');
 });
+*/
 
 /* FORNECEDORES */
+/*
 app.get('/cadastro/fornecedores', (req, res) =>{
     res.render('fornecedores/cadastro');
 });
-
+*/
 
 /* CONSULTAS */
 app.get('/consulta', (req, res) =>{
     res.render('consultas');
 });
+
+
 
 app.get('*', (req, res)=>{
     res.render('pageNotFound')
