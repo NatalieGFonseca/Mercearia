@@ -1,8 +1,8 @@
-const Usuarios = (sequelize, DataTypes) => {
-    return sequelize.define('Usuarios', {
+const Usuario = (sequelize, DataTypes) => {
+    return sequelize.define('Usuario', {
         login: DataTypes.STRING,
         senha: DataTypes.STRING
     });
 }
 
-module.exports = Usuarios;
+module.exports = Usuario;

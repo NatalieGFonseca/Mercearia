@@ -1,5 +1,5 @@
-const Fornecedores = (sequelize, DataTypes) => {
-    return sequelize.define('Fornecedores', {
+const Fornecedor = (sequelize, DataTypes) => {
+    return sequelize.define('Fornecedor', {
         nome: DataTypes.STRING,
         telefone: DataTypes.INTEGER,
         email: DataTypes.STRING,
@@ -7,4 +7,4 @@ const Fornecedores = (sequelize, DataTypes) => {
     });
 }
 
-module.exports = Fornecedores;
+module.exports = Fornecedor;

@@ -1,7 +1,5 @@
-const { Usuarios } = require('./Usuarios');
-
-const Funcionarios = (sequelize, DataTypes) => {
-    return sequelize.define('Funcionarios', {
+module.exports = (sequelize, DataTypes) => {
+    const Funcionario = sequelize.define('Funcionario', {
         cpf: DataTypes.STRING,
         nome: DataTypes.STRING,
         telefone: DataTypes.INTEGER,
@@ -9,16 +7,10 @@ const Funcionarios = (sequelize, DataTypes) => {
         rua: DataTypes.STRING,
         bairro: DataTypes.STRING,
         data_nascimento: DataTypes.DATE,
-        id_user: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "usuario",
-                key: "id"
-            }
-        }
-    });
+        id_user: DataTypes.INTEGER
+    }, {});
+    Funcionario.associate = function (models) {
+        Funcionario.belongsTo(models.Usuario, { foreignKey: 'id_user' })
+    }
+    return Funcionario;
 }
-
-Funcionarios.hasOne(Usuarios);
-
-module.exports = Funcionarios;
