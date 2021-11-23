@@ -42,8 +42,8 @@
                         </li>
                     </ul>
 
-                    
-                    <form class="d-flex" action="/cadastro/produtos" method="GET" style="margin-right: 5px;">
+
+                    <form class="d-flex" action="/cadastro" method="GET" style="margin-right: 5px;">
                         <button class="btn btn-outline-success" type="submit">Adicionar<i class="fas fa-plus"
                                 style="padding-left: 5px; text-align: center;"></i></button>
                     </form>
@@ -60,8 +60,33 @@
             </div>
         </nav>
 
-        <!-- PRODUTOS -->
-        <%- include('produtos') %>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <% for( let p of produtos ) { %>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produto</h5>
+                                    <p>Nome: <%= p.nome %> </p>
+                                    <p>Preço: R$ <%= p.preco_unitario %> </p>
+                                    <button class="btn btn-outline-success"
+                                        style=" padding-bottom: 5px;  margin-right: 5px; float: right;">
+                                        <a href="/produtos/<%= p.id %> " style="color: white;">Excluir</a><i
+                                            class="far fa-trash-alt" style="padding-left: 5px; text-align: center;"></i>
+                                    </button>
+                                    <button class="btn btn-outline-success"
+                                        style=" padding-bottom: 5px; margin-right: 5px; float: right;">
+                                        <a href="/produtos/<%=p.id%>/edite" style="color: white;">Editar</a>
+                                        <i class="far fa-edit" style="padding-left: 5px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>  
+                    <% } %>
+                </div>
+            </div>
+        </div>
 
     </body>
 
