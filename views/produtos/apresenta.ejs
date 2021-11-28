@@ -43,16 +43,16 @@
                     </ul>
 
 
-                    <form class="d-flex" action="/cadastro" method="GET" style="margin-right: 5px;">
+                    <form class="d-flex" action="/produtos/cadastro" method="GET" style="margin-right: 5px;">
                         <button class="btn btn-outline-success" type="submit">Adicionar<i class="fas fa-plus"
                                 style="padding-left: 5px; text-align: center;"></i></button>
                     </form>
 
-                    <form class="d-flex" action="/home" method="GET" style="margin-right: 5px;">
+                    <form class="d-flex" action="/funcionarios/home" method="GET" style="margin-right: 5px;">
                         <button class="btn btn-outline-success" type="submit">Voltar<i class="fas fa-arrow-left"
                                 style="padding-left: 5px; text-align: center;"></i></button>
                     </form>
-                    <form class="d-flex" action="/" method="GET" style="margin-right: 5px;">
+                    <form class="d-flex" action="/usuarios/logoff" method="GET" style="margin-right: 5px;">
                         <button class="btn btn-outline-success" type="submit">Sair<i class="fas fa-sign-out-alt"
                                 style="padding-left: 5px; text-align: center;"></i></button>
                     </form>
@@ -68,13 +68,21 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Produto</h5>
-                                    <p>Nome: <%= p.nome %> </p>
-                                    <p>Preço: R$ <%= p.preco_unitario %> </p>
-                                    <button class="btn btn-outline-success"
-                                        style=" padding-bottom: 5px;  margin-right: 5px; float: right;">
-                                        <a href="/produtos/<%= p.id %> " style="color: white;">Excluir</a><i
-                                            class="far fa-trash-alt" style="padding-left: 5px; text-align: center;"></i>
-                                    </button>
+                                    <p>ID = <%= p.id %>
+                                    </p>
+                                    <p>Nome: <%= p.nome %>
+                                    </p>
+                                    <p>Preço: R$ <%= p.preco_unitario %>
+                                    </p>
+                                    <p>Tipo: <%= p.tipo %>
+                                    </p>
+                                    <form method="POST" action="/produtos/<%=p.id %>?_method=DELETE">
+                                        <button class="btn btn-outline-success"
+                                            style=" padding-bottom: 5px;  margin-right: 5px; float: right;">
+                                            <a style="color: white;">Excluir</a><i class="far fa-trash-alt"
+                                                style="padding-left: 5px; text-align: center;"></i>
+                                        </button>
+                                    </form>
                                     <button class="btn btn-outline-success"
                                         style=" padding-bottom: 5px; margin-right: 5px; float: right;">
                                         <a href="/produtos/<%=p.id%>/edite" style="color: white;">Editar</a>
@@ -82,8 +90,8 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>  
-                    <% } %>
+                        </div>
+                        <% } %>
                 </div>
             </div>
         </div>

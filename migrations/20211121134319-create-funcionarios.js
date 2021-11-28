@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('funcionario', { 
+    await queryInterface.createTable('funcionarios', { 
       cpf: {
         type: Sequelize.STRING,
         primaryKey: true,
@@ -36,7 +36,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'usuario',
+          model: 'usuarios',
           key: 'id'
         }
       },
@@ -55,6 +55,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('funcionario');
+    await queryInterface.dropTable('funcionarios');
   }
 };

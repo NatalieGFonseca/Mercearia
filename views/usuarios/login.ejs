@@ -1,4 +1,4 @@
-<%- include ('assets/head') %>
+<%- include ('../assets/head') %>
     <title>Login</title>
 <style>
     
@@ -29,14 +29,14 @@
                                             style="text-align: center;">
                                     </div>
                                     <h3 style="text-align: center; padding-top: 5px;">Login</h3>
-                                    <form action="/home" method="POST">
+                                    <form action="/usuarios/login" method="POST">
                                         <div class="mb-3">
-                                            <label for="usuario" class="form-label">Usuário</label>
-                                            <input type="text" class="form-control" id="usuario" required>
+                                            <label for="nome" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="nome" name='nome' required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="senha" class="form-label">Senha</label>
-                                            <input type="password" class="form-control" id="senha" required>
+                                            <input type="password" class="form-control" id="senha" name='senha' required>
                                         </div>
                                         <div style="text-align: center;">
                                             <button type="submit" class="btn btn-outline-success">Entrar<i
@@ -45,6 +45,10 @@
                                             </button>
                                         </div>
                                     </form>
+                                    
+                                    <div style="text-align: center; padding-top: 10px;">
+                                        <a href="/usuarios/novo">Ainda sem cadastro? <strong>Cadastre aqui</strong></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

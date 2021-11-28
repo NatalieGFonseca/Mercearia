@@ -1,6 +1,6 @@
 const Usuario = (sequelize, DataTypes) => {
     return sequelize.define('Usuario', {
-        login: DataTypes.STRING,
+        nome: DataTypes.STRING,
         senha: DataTypes.STRING
     });
 }

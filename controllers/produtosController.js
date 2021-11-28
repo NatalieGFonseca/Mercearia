@@ -1,15 +1,14 @@
 const {Produto, Fornecedor} = require('../models');
-const {Router} = require('express');
+const express = require('express');
+const roteador = express.Router();
 
-const roteador = Router();
-
-roteador.get('/', async (req, res) =>{
+roteador.get('/', async(req, res)=>{
     const produtos = await Produto.findAll({
         include: [
             {model: Fornecedor}
         ]
     });
-    res.render('produtos/visualiza', {produtos});
+    res.render('produtos/apresenta', {produtos});
 });
 
 roteador.get('/cadastro', (req, res) =>{
@@ -39,8 +38,15 @@ roteador.patch('/:id', async (req, res)=>{
     res.redirect('/produtos');
 });
 
-roteador.delete('/:id', async (req, res)=>{
+
+roteador.post('/cadastro', async (req, res) => {
+    const {nome, preco_unitario, tipo, id_fornecedor} = req.body;
     
+    await Produto.create({nome, preco_unitario, tipo, id_fornecedor});
+    res.redirect('/produtos');
+});
+
+roteador.delete('/:id', async (req, res)=>{
     await Produto.destroy(
         {
             where: {id: req.params.id}
@@ -49,3 +55,5 @@ roteador.delete('/:id', async (req, res)=>{
 
     res.redirect('/produtos');
 });
+
+module.exports = roteador;

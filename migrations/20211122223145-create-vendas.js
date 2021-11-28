@@ -2,30 +2,28 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('item', { 
-      quantidade: {
+    await queryInterface.createTable('vendas', { 
+      id: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
         allowNull: false
       },
-      valor_unitario: {
+      cpf: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: {
+          model: 'funcionarios',
+          key: 'cpf'
+        }
+      },
+      valor: {
         type: Sequelize.FLOAT,
         allowNull: false
       },
-      id_produto: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'produto',
-          key: 'id'
-        }
-      },
-      id_venda: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'venda',
-          key: 'id'
-        }
+      data: {
+        type: Sequelize.DATE,
+        allowNull: false
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -42,6 +40,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('item');
+    await queryInterface.dropTable('vendas');
   }
 };

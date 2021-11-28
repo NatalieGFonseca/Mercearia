@@ -1,8 +1,26 @@
 const express = require('express');
-const app = express();
+const {usuarios, fornecedores, funcionarios, produtos} = require('./controllers');
 const path = require('path');
-const {usuarios, produtos, fornecedores, funcionarios} = require('./controllers');
-const methodOverride = require('method-override');
+var methodOverride = require('method-override');
+const app = express();
+
+const session = require('express-session');
+
+const sessionOptions = {
+    secret: 'criptografia',
+    resave: false,
+    saveUninitialized: false
+}
+
+app.use(session(sessionOptions));
+
+function authenticated_pass(req, res, next){
+    if(req.session.login || req.path === '/login'){
+        next();
+    }else{
+        res.redirect('/usuarios/login');
+    }
+}
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'/views'));
@@ -13,71 +31,16 @@ app.use(express.json());
 
 app.use(methodOverride('_method'));
 
+app.use('/usuarios', usuarios);
+app.use(authenticated_pass);
+app.use('/funcionarios', funcionarios);
+app.use('/produtos', produtos);
 app.use('/fornecedores', fornecedores);
-
-/* ROTAS */
-app.get('/home', (req, res)=>{
-    res.render('home');
-})
-
-app.post('/home', (req, res)=>{
-    const {usuario} = req.body;
-    res.redirect('home');
-})
-
-app.get('/', (req, res) =>{
-    res.render('login');
-});
-
-/* PRODUTOS */
-/*
-app.get('/produtos', (req, res) =>{
-    res.render('produtos/visualiza');
-});
-
-app.get('/cadastro/produtos', (req, res) =>{
-    res.render('produtos/cadastro');
-});
-
-app.get('/produtos/:id/edite', (req, res)=>{
-	const {id} = req.params;
-    const produto = "";
-
-    res.render('comentarios/edite', {produto});
-});
-
-app.patch('/produtos/:id', (req, res)=>{
-	const {id} = req.params;
-
-    const novoProduto = req.body.comentario;
-    const produto = novoProduto;
-    res.redirect('/comentarios');
-});
-
-app.delete('/produtos/:id',(req, res)=>{
-    const {id}= req.params;
-    res.redirect('/produtos');
-});
-*/
-
-/* FORNECEDORES */
-/*
-app.get('/cadastro/fornecedores', (req, res) =>{
-    res.render('fornecedores/cadastro');
-});
-*/
-
-/* CONSULTAS */
-app.get('/consulta', (req, res) =>{
-    res.render('consultas');
-});
-
-
 
 app.get('*', (req, res)=>{
     res.render('pageNotFound')
 })
 
 app.listen(80, () =>{
-    console.log('Ouvindo na porta 80')
+    console.log('Listening at port 80')
 });

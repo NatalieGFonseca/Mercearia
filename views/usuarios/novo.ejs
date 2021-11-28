@@ -1,0 +1,56 @@
+<%- include ('../assets/head') %>
+    <title>Novo usuário</title>
+<style>
+    
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container-box {
+    height: 200px;
+  }
+  
+  .content-box {
+    text-align: justify;
+  }
+</style>
+    <body>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="col-lg-12 flex-box" style="padding-top: 60px;">
+                    <div class="card mb-12 content-box" style="max-width: 840px;">
+                        <div class="row g-0">
+                            <div class="col-lg-12">
+                                <div class="card-body">
+                                    <div style="text-align: center;">
+                                        <img src="/imagens/logo.jpg" alt="logo" width="100px" height="100px"
+                                            style="text-align: center;">
+                                    </div>
+                                    <h3 style="text-align: center; padding-top: 5px;">Cadastro</h3>
+                                    <form action="/usuarios/novo" method="POST">
+                                        <div class="mb-3">
+                                            <label for="nome" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="nome" name="nome" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="senha" class="form-label">Senha</label>
+                                            <input type="password" class="form-control" id="senha" name="senha" required>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <button type="submit" class="btn btn-outline-success">Enviar<i
+                                                    class="fas fa-sign-in-alt"
+                                                    style="padding-left: 5px; text-align: center; "></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    

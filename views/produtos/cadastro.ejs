@@ -16,7 +16,7 @@
                             <div class="col-lg-6">
                                 <div class="card-body">
                                     <h3 style="text-align: center;">Cadastro</h3>
-                                    <form action="/home" method="post">
+                                    <form action="/produtos/cadastro" method="POST">
                                         <div class="mb-3">
                                             <label for="nome" class="form-label">Nome</label>
                                             <input type="text" class="form-control" id="nome" name="nome" required>
@@ -26,10 +26,13 @@
                                             <input type="text" class="form-control" id="tipo" name="tipo" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="preco" class="form-label">Preço</label>
-                                            <input type="number" class="form-control" id="preco" name="preco" required>
+                                            <label for="preco_unitario" class="form-label">Preço</label>
+                                            <input type="number" class="form-control" id="preco_unitario" name="preco_unitario" required>
                                         </div>
-                                        
+                                        <div class="mb-3">
+                                            <label for="id_fornecedor" class="form-label">Fornecedor</label>
+                                            <input type="number" class="form-control" id="id_fornecedor" name="id_fornecedor" required>
+                                        </div>
                                         <div>
                                             <button type="submit" class="btn btn-outline-success" style="float: right; margin-bottom: 10px;">Cadastrar</button>
                                         </div>
