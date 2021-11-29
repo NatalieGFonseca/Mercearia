@@ -1,13 +1,13 @@
 <%- include ('../assets/head') %>
-    <title>Visualização dos produtos</title>
+    <title>Visualização dos fornecedores</title>
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand">
                     <h3>Mercearia</h3>
                 </a>
-                    <form class="d-flex" action="/produtos/cadastro" method="GET" style="margin-right: 5px;">
+                    <form class="d-flex" action="/fornecedores/cadastro" method="GET" style="margin-right: 5px;">
                         <button class="btn btn-outline-success" type="submit">Adicionar<i class="fas fa-plus"
                                 style="padding-left: 5px; text-align: center;"></i></button>
                     </form>
@@ -27,15 +27,16 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <% for( let p of produtos ) { %>
+                    <% for( let f of fornecedores ) { %>
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Produto</h5>
-                                    <p>Nome: <%= p.nome %></p>
-                                    <p>Preço: R$ <%= p.preco_unitario %></p>
-                                    <p>Tipo: <%= p.tipo %></p>
-                                    <form method="POST" action="/produtos/<%=p.id %>?_method=DELETE">
+                                    <h5 class="card-title">Fornecedor</h5>
+                                    <p>Nome: <%= f.nome %></p>
+                                    <p>Telefone: R$ <%= f.telefone %></p>
+                                    <p>Email: <%= f.email %> </p>
+                                    <p>Tipo: <%= f.tipo %></p>
+                                    <form method="POST" action="/fornecedores/<%=f.id %>?_method=DELETE">
                                         <button class="btn btn-outline-success"
                                             style=" padding-bottom: 5px;  margin-right: 5px; float: right;">
                                             <a style="color: white;">Excluir</a><i class="far fa-trash-alt"
@@ -44,7 +45,7 @@
                                     </form>
                                     <button class="btn btn-outline-success"
                                         style=" padding-bottom: 5px; margin-right: 5px; float: right;">
-                                        <a href="/produtos/<%=p.id%>/edite" style="color: white;">Editar</a>
+                                        <a href="/fornecedores/<%=f.id%>/edite" style="color: white;">Editar</a>
                                         <i class="far fa-edit" style="padding-left: 5px;"></i>
                                     </button>
                                 </div>

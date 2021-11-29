@@ -9,12 +9,12 @@ module.exports = {
         primaryKey: true,
         allowNull: false
       },
-      cpf: {
-        type: Sequelize.STRING,
+      id_funcionario: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'funcionarios',
-          key: 'cpf'
+          key: 'id'
         }
       },
       valor: {

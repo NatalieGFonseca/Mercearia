@@ -6,11 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         funcao: DataTypes.STRING,
         rua: DataTypes.STRING,
         bairro: DataTypes.STRING,
-        data_nascimento: DataTypes.DATE,
-        id_user: DataTypes.INTEGER
+        data_nascimento: DataTypes.DATE
     }, {});
-    Funcionario.associate = function (models) {
-        Funcionario.belongsTo(models.Usuario, { foreignKey: 'id_user' })
-    }
     return Funcionario;
 }

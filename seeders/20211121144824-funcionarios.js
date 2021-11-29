@@ -10,8 +10,7 @@ module.exports = {
         funcao: 'atendente',
         rua: 'rua 2',
         bairro: 'jardim',
-        data_nascimento: '1994-10-22 00:00:00',
-        id_user: 1
+        data_nascimento: '1994-10-22 00:00:00'
       },
       {
         cpf: '12452681263',
@@ -20,8 +19,7 @@ module.exports = {
         funcao: 'gerente',
         rua: 'rua 7',
         bairro: 'jardim',
-        data_nascimento: '1997-01-02 00:00:00',
-        id_user: 2
+        data_nascimento: '1997-01-02 00:00:00'
       },
       {
         cpf: '12147852363',
@@ -30,8 +28,7 @@ module.exports = {
         funcao: 'dono',
         rua: 'rua 20',
         bairro: 'jardim novo',
-        data_nascimento: '1987-05-12 00:00:00',
-        id_user: 3
+        data_nascimento: '1987-05-12 00:00:00'
       }
     ], {});
   },

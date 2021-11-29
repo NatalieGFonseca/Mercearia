@@ -1,6 +1,6 @@
 <%- include ('../assets/head') %>
 
-<title>Edição de produto</title>
+<title>Edição de fornecedor</title>
 <%- include('../assets/menu') %> 
 <body>
     
@@ -16,18 +16,22 @@
                             <div class="col-lg-6">
                                 <div class="card-body">
                                     <h3 style="text-align: center;">Edite</h3>
-                                    <form method="POST" action="/produtos/<%=produto.id%>?_method=PATCH">
+                                    <form method="POST" action="/fornecedores/<%=fornecedor.id%>?_method=PATCH">
                                         <div class="mb-3">
                                             <label for="nome" class="form-label">Nome</label>
-                                            <textarea name="nome" cols='50' rows='1'><%= produto.nome%></textarea>
+                                            <textarea name="nome" cols='50' rows='1'><%= fornecedor.nome%></textarea> 
                                         </div>
                                         <div class="mb-3">
                                             <label for="tipo" class="form-label">Tipo</label>
-                                            <textarea name="tipo" cols='50' rows='1'><%= produto.tipo%></textarea> 
+                                            <textarea name="tipo" cols='50' rows='1'><%= fornecedor.tipo%></textarea> 
                                         </div>
                                         <div class="mb-3">
-                                            <label for="preco_unitario" class="form-label">Preço</label>
-                                            <textarea name="preco_unitario" cols='50' rows='1'><%= produto.preco_unitario%></textarea> 
+                                            <label for="email" class="form-label">Email</label>
+                                            <textarea name="email" cols='50' rows='1'><%= fornecedor.email%></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="telefone" class="form-label">Tipo</label>
+                                            <textarea name="telefone" cols='50' rows='1'><%= fornecedor.telefone%></textarea>
                                         </div>
                                         
                                         <div>

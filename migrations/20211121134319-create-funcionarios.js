@@ -3,9 +3,14 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('funcionarios', { 
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+      },
       cpf: {
         type: Sequelize.STRING,
-        primaryKey: true,
         allowNull: false
       },
       nome: {
@@ -31,14 +36,6 @@ module.exports = {
       data_nascimento: {
         type: Sequelize.DATE,
         allowNull: false
-      },
-      id_user: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'usuarios',
-          key: 'id'
-        }
       },
       createdAt: {
         type: Sequelize.DATE,
