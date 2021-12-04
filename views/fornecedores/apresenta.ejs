@@ -33,7 +33,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Fornecedor</h5>
                                     <p>Nome: <%= f.nome %></p>
-                                    <p>Telefone: R$ <%= f.telefone %></p>
+                                    <p>Telefone: <%= f.telefone %></p>
                                     <p>Email: <%= f.email %> </p>
                                     <p>Tipo: <%= f.tipo %></p>
                                     <form method="POST" action="/fornecedores/<%=f.id %>?_method=DELETE">
@@ -57,5 +57,3 @@
         </div>
 
     </body>
-
-    <script src="/js/scripts.js"></script>

@@ -35,6 +35,7 @@ roteador.post('/login', async (req, res) => {
         req.session.login = true;
         res.redirect('/funcionarios/home');
     }else{
+        console.log("Usuário não encontrado");
         res.redirect('usuarios/login');
     }
 

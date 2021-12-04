@@ -13,7 +13,7 @@ roteador.get('/home', (req, res) => {
 
 roteador.get('/consultas', (req, res) => {
     res.render('funcionarios/consultas');
-})
+});
 
 roteador.get('/cadastro', (req, res) =>{
     res.render('funcionarios/cadastro');

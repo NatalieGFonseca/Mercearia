@@ -26,13 +26,31 @@
                         <div class="col-lg-8 content-box">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Consulte usuário logado</h5>
-                                    <form action="/home" method="post">
+                                    <h5 class="card-title">Consulte estoque</h5>
+                                    <form action="/produtos/estoque" method="GET">
                                         <div class="mb-3">
-                                            <label for="nome" class="form-label">Digite o nome do funcionário</label>
-                                            <input type="text" class="form-control" id="nome" name="nome" required>
+                                            <label for="nome" class="form-label">Digite o nome do produto</label>
+                                            <input type="text" class="form-control" id="nome" name='nome' required>
                                         </div>
 
+                                        <div>
+                                            <button type="submit" class="btn btn-outline-success"
+                                                style="float: right; margin-bottom: 10px;">
+                                            Consultar
+                                        </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Consulte produto por fornecedor</h5>
+                                    <form action="/produtos/fornecedor" method="GET">
+                                        <div class="mb-3">
+                                            <label for="nome" class="form-label">Digite o fornecedor</label>
+                                            <input type="text" class="form-control" id="nome" name='nome' required>
+                                        </div>
                                         <div>
                                             <button type="submit" class="btn btn-outline-success"
                                                 style="float: right; margin-bottom: 10px;">Consultar</button>
@@ -43,24 +61,12 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Consulte produto por fornecedor</h5>
-                                    <form action="/home" method="post">
+                                    <h5 class="card-title">Filtre os produtos por preço</h5>
+                                    <form action="/produtos/preco" method="GET">
                                         <div class="mb-3">
-                                            <label for="nome" class="form-label">Digite o produto</label>
-                                            <input type="text" class="form-control" id="nome" name="nome" required>
+                                            <label for="preco_unitario" class="form-label">Digite preco</label>
+                                            <input type="number" class="form-control" id="preco_unitario" name='preco_unitario' required>
                                         </div>
-
-                                        <div class="mb-3">
-                                            <label>Filtre por:</label>
-                                        </div>
-
-                                        <div class="mb-3" style="text-align: center;">
-                                            <input type="radio" id="test1" name="radio-group" checked>
-                                            <label for="test1" style="margin-right: 55px;">Fornecedor</label>
-                                            <input type="radio" id="test1" name="radio-group" checked>
-                                            <label for="test1" style="margin-right: 55px;">Tipo</label>
-                                        </div>
-
                                         <div>
                                             <button type="submit" class="btn btn-outline-success"
                                                 style="float: right; margin-bottom: 10px;">Consultar</button>
@@ -75,5 +81,3 @@
                 </div>
             </div>
         </body>
-
-        <script src="/js/scripts.js"></script>

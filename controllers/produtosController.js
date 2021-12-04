@@ -1,13 +1,16 @@
-const {Produto, Fornecedor} = require('../models');
+const {Produto, Fornecedor, Estoque} = require('../models');
 const express = require('express');
 const roteador = express.Router();
+const { Op } = require("sequelize");
 
 roteador.get('/', async(req, res)=>{
+
     const produtos = await Produto.findAll({
         include: [
             {model: Fornecedor}
         ]
     });
+
     res.render('produtos/apresenta', {produtos});
 });
 
@@ -20,6 +23,63 @@ roteador.get('/:id/edite', async (req, res)=>{
     let produto = await Produto.findByPk(id);
 
     res.render('produtos/edite', {produto});
+});
+
+roteador.get('/fornecedor', async(req, res)=>{
+    
+    const nome = req.query;
+
+    const produtos = await Produto.findAll({
+        include: [
+            {
+                model: Fornecedor,
+                where: {
+                    nome: nome
+                }
+            }
+        ]
+    });
+
+    res.render('produtos/apresenta', {produtos});
+
+});
+
+roteador.get('/estoque', async (req, res) => {
+
+    const nome = req.query;
+
+    const produtos = await Estoque.findAll({
+        include: [
+            {
+                model: Produto,
+                where: {
+                    nome: nome
+                }
+            }
+        ]
+    });
+
+    res.render('produtos/apresenta', {produtos});
+});
+
+roteador.get('/preco', async (req, res) => {
+
+    const preco_unitario = req.query;
+
+    const produtos = await Estoque.findAll({
+        include: [
+            {
+                model: Produto,
+                where: {
+                    preco_unitario: {
+                        [Op.gte]: preco_unitario
+                    }
+                }
+            }
+        ]
+    });
+
+    res.render('produtos/apresenta', {produtos});
 });
 
 roteador.patch('/:id', async (req, res)=>{

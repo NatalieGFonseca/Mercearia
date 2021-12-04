@@ -35,7 +35,7 @@
                                     <p>Nome: <%= f.nome %> - Função: <%= f.funcao %> </p>
                                     <p>CPF: <%= f.cpf %></p>
                                     <p>Data de nascimento: <%= f.data_nascimento %> </p>
-                                    <p>Telefone: R$ <%= f.telefone %></p>
+                                    <p>Telefone: <%= f.telefone %></p>
                                     <p>Rua: <%= f.rua %> - <%= f.bairro %>  </p>
                                     <form method="POST" action="/funcionarios/<%=f.id %>?_method=DELETE">
                                         <button class="btn btn-outline-success"
@@ -58,5 +58,3 @@
         </div>
 
     </body>
-
-    <script src="/js/scripts.js"></script>
