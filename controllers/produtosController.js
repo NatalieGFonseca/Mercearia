@@ -59,7 +59,7 @@ roteador.get('/estoque', async (req, res) => {
         ]
     });
 
-    res.render('produtos/apresenta', {produtos});
+    res.render('estoque/apresenta', {produtos});
 });
 
 roteador.get('/preco', async (req, res) => {
@@ -79,7 +79,7 @@ roteador.get('/preco', async (req, res) => {
         ]
     });
 
-    res.render('produtos/apresenta', {produtos});
+    res.render('estoque/apresenta', {produtos});
 });
 
 roteador.patch('/:id', async (req, res)=>{
@@ -104,6 +104,8 @@ roteador.post('/cadastro', async (req, res) => {
     
     await Produto.create({nome, preco_unitario, tipo, id_fornecedor});
     res.redirect('/produtos');
+
+    console.log("Produto cadastrado com sucesso");
 });
 
 roteador.delete('/:id', async (req, res)=>{
@@ -112,6 +114,8 @@ roteador.delete('/:id', async (req, res)=>{
             where: {id: req.params.id}
         }
     );
+
+    console.log("Produto excluído com sucesso");
 
     res.redirect('/produtos');
 });
