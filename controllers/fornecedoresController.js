@@ -27,13 +27,10 @@ roteador.get('/:id/edite', async (req, res)=>{
 
 roteador.patch('/:id', async (req, res)=>{
 	
-    const {nome, telefone, email, tipo} = req.body;
+    const {telefone} = req.body;
 
     await Fornecedor.update(
-        {nome},
         {telefone},
-        {email},
-        {tipo},
         {
             where: {id: req.params.id}
         }
