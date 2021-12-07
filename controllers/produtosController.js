@@ -27,7 +27,9 @@ roteador.get('/:id/edite', async (req, res)=>{
 
 roteador.get('/fornecedor', async(req, res)=>{
     
-    const nome = req.query;
+    const nome = req.body;
+
+    console.log(nome);
 
     const produtos = await Produto.findAll({
         include: [
@@ -40,13 +42,17 @@ roteador.get('/fornecedor', async(req, res)=>{
         ]
     });
 
+    console.log(produtos);
+
     res.render('produtos/apresenta', {produtos});
 
 });
 
 roteador.get('/estoque', async (req, res) => {
 
-    const nome = req.query;
+    const nome = req.body;
+
+    console.log(nome);
 
     const produtos = await Estoque.findAll({
         include: [
@@ -59,12 +65,16 @@ roteador.get('/estoque', async (req, res) => {
         ]
     });
 
+    console.log(produtos);
+
     res.render('estoque/apresenta', {produtos});
 });
 
 roteador.get('/preco', async (req, res) => {
 
-    const preco_unitario = req.query;
+    const preco_unitario = req.body;
+
+    console.log(preco_unitario);
 
     const produtos = await Estoque.findAll({
         include: [
@@ -79,17 +89,17 @@ roteador.get('/preco', async (req, res) => {
         ]
     });
 
+    console.log(produtos);
+
     res.render('estoque/apresenta', {produtos});
 });
 
 roteador.patch('/:id', async (req, res)=>{
 	
-    const {nome, preco_unitario, tipo} = req.body;
+    const {preco_unitario} = req.body;
 
     await Produto.update(
-        {nome},
         {preco_unitario},
-        {tipo},
         {
             where: {id: req.params.id}
         }

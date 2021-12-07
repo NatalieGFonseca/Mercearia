@@ -2,7 +2,7 @@ const {Funcionario} = require('../models');
 const express = require('express');
 const roteador = express.Router();
 
-roteador.get('/', async(req, res)=>{
+roteador.get('/', async (req, res)=>{
     const funcionarios = await Funcionario.findAll();
     res.render('funcionarios/apresenta', {funcionarios});
 });
@@ -35,17 +35,10 @@ roteador.get('/:id/edite', async (req, res)=>{
 
 roteador.patch('/:id', async (req, res)=>{
 
-    const {nome, telefone, email, cpf, rua, bairro, funcao, data_nascimento} = req.body;
+    const {funcao} = req.body;
 
     await Funcionario.update(
-        {nome},
-        {telefone},
-        {email},
-        {cpf},
-        {rua},
-        {bairro},
         {funcao},
-        {data_nascimento},
         {
             where: {id: req.params.id}
         }

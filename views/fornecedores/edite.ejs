@@ -18,19 +18,7 @@
                                     <h3 style="text-align: center;">Edite</h3>
                                     <form method="POST" action="/fornecedores/<%=fornecedor.id%>?_method=PATCH">
                                         <div class="mb-3">
-                                            <label for="nome" class="form-label">Nome</label>
-                                            <textarea name="nome" cols='50' rows='1'><%= fornecedor.nome%></textarea> 
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="tipo" class="form-label">Tipo</label>
-                                            <textarea name="tipo" cols='50' rows='1'><%= fornecedor.tipo%></textarea> 
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <textarea name="email" cols='50' rows='1'><%= fornecedor.email%></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="telefone" class="form-label">Tipo</label>
+                                            <label for="telefone" class="form-label">Telefone</label>
                                             <textarea name="telefone" cols='50' rows='1'><%= fornecedor.telefone%></textarea>
                                         </div>
                                         

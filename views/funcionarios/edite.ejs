@@ -18,32 +18,8 @@
                                     <h3 style="text-align: center;">Edite</h3>
                                     <form method="POST" action="/funcionarios/<%=funcionario.id%>?_method=PATCH">
                                         <div class="mb-3">
-                                            <label for="nome" class="form-label">Nome</label>
-                                            <textarea name="nome" cols='50' rows='1'><%= funcionario.nome%></textarea> 
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="cpf" class="form-label">CPF</label>
-                                            <textarea name="cpf" cols='50' rows='1'><%= funcionario.cpf%></textarea> 
-                                        </div>
-                                        <div class="mb-3">
                                             <label for="funcao" class="form-label">Função</label>
                                             <textarea name="funcao" cols='50' rows='1'><%= funcionario.funcao%></textarea> 
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="telefone" class="form-label">Telefone</label>
-                                            <textarea name="telefone" cols='50' rows='1'><%= funcionario.telefone%></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="data_nascimento" class="form-label">Data de nascimento</label>
-                                            <textarea name="data_nascimento" cols='50' rows='1'><%= funcionario.data_nascimento%></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="rua" class="form-label">Rua</label>
-                                            <textarea name="rua" cols='50' rows='1'><%= funcionario.rua%></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="bairro" class="form-label">funcao</label>
-                                            <textarea name="bairro" cols='50' rows='1'><%= funcionario.bairro%></textarea>
                                         </div>
                                         <div>
                                             <button type="submit" class="btn btn-outline-success" style="float: right; margin-bottom: 10px;">Salvar</button>
