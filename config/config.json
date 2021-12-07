@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root123",
+    "password": "951357",
     "database": "banco_mercearia",
     "host": "127.0.0.1",
     "dialect": "mysql"

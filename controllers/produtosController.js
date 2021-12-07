@@ -41,7 +41,7 @@ roteador.get('/fornecedor', async(req, res)=>{
     });
 
     res.render('produtos/apresenta', {produtos});
-
+    console.log(produtos);
 });
 
 roteador.get('/estoque', async (req, res) => {
@@ -84,14 +84,14 @@ roteador.get('/preco', async (req, res) => {
 
 roteador.patch('/:id', async (req, res)=>{
 	
-    const {nome, preco_unitario, tipo} = req.body;
+    const {nome,preco_unitario, tipo} = req.body;
+    
 
     await Produto.update(
-        {nome},
-        {preco_unitario},
-        {tipo},
+        {nome,preco_unitario,tipo},
         {
-            where: {id: req.params.id}
+            // where: {id: req.params.id}
+            where: {id: req.body.id}
         }
     );
 

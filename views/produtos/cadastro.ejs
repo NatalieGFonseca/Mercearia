@@ -27,11 +27,15 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="preco_unitario" class="form-label">Preço</label>
-                                            <input type="number" class="form-control" id="preco_unitario" name="preco_unitario" required>
+                                            <input type="float" min="0" class="form-control" id="preco_unitario" name="preco_unitario" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="id_fornecedor" class="form-label">Fornecedor</label>
-                                            <input type="number" class="form-control" id="id_fornecedor" name="id_fornecedor" required>
+                                            <select id="id_fornecedor" class="form-control" id="id_fornecedor" name="id_fornecedor" required>
+                                                <option value="1">Hort-Fruti</option>
+                                                <option value="2">Limpeza</option>
+                                                <option value="3">Alimentos</option>
+                                            </select>
                                         </div>
                                         <div>
                                             <button type="submit" class="btn btn-outline-success" style="float: right; margin-bottom: 10px;">Cadastrar</button>
