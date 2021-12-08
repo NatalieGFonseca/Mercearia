@@ -27,9 +27,7 @@ roteador.get('/:id/edite', async (req, res)=>{
 
 roteador.get('/fornecedor', async(req, res)=>{
     
-    const nome = req.body;
-
-    console.log(nome);
+    const {nome} = req.query;
 
     const produtos = await Produto.findAll({
         include: [
@@ -42,15 +40,12 @@ roteador.get('/fornecedor', async(req, res)=>{
         ]
     });
 
-    console.log(produtos);
-
     res.render('produtos/apresenta', {produtos});
-    console.log(produtos);
 });
 
 roteador.get('/estoque', async (req, res) => {
 
-    const nome = req.body;
+    const {nome} = req.query;
 
     console.log(nome);
 
@@ -96,21 +91,12 @@ roteador.get('/preco', async (req, res) => {
 
 roteador.patch('/:id', async (req, res)=>{
 	
-<<<<<<< HEAD
-    const {nome,preco_unitario, tipo} = req.body;
-    
-
-    await Produto.update(
-        {nome,preco_unitario,tipo},
-=======
     const {preco_unitario} = req.body;
 
     await Produto.update(
         {preco_unitario},
->>>>>>> 7223b8ae9d04ca5dbdb1bd38a0e1f4593b1187c6
         {
-            // where: {id: req.params.id}
-            where: {id: req.body.id}
+            where: {id: req.params.id}
         }
     );
 
