@@ -18,7 +18,7 @@ module.exports = {
       {
         nome: 'fornecedor3',
         tipo: 'alimenticio',
-        telefone: '(12) 4563-1789,
+        telefone: '(12) 4563-1789',
         email: 'fornecedor3@gmail.com'
       }
     ], {});

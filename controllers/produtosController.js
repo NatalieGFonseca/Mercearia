@@ -1,7 +1,6 @@
-const {Produto, Fornecedor, Item, Venda} = require('../models');
+const {Produto, Fornecedor, Estoque} = require('../models');
 const express = require('express');
 const roteador = express.Router();
-const { Op } = require("sequelize");
 
 roteador.get('/', async(req, res)=>{
 
@@ -41,6 +40,26 @@ roteador.get('/fornecedor', async(req, res)=>{
     });
 
     res.render('produtos/apresenta', {produtos});
+});
+
+roteador.get('/estoque', async (req, res) => {
+
+    const {nome} = req.query;
+
+    const produtos = await Estoque.findAll({
+
+        include: [
+            {
+                model: Produto,
+                where: {
+                    nome: nome
+                }
+            }
+        ]
+
+    });
+
+    res.render('estoque/apresenta', {produtos});
 
 });
 
