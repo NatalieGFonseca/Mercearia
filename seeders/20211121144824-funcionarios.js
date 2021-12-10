@@ -6,7 +6,7 @@ module.exports = {
       {
         cpf: '12333333333',
         nome: 'natalie',
-        telefone: 123456789,
+        telefone: '(12) 3415-6789',
         funcao: 'atendente',
         rua: 'rua 2',
         bairro: 'jardim',
@@ -15,7 +15,7 @@ module.exports = {
       {
         cpf: '12452681263',
         nome: 'natalia',
-        telefone: 1244545109,
+        telefone: '(12) 4454-5109',
         funcao: 'gerente',
         rua: 'rua 7',
         bairro: 'jardim',
@@ -24,7 +24,7 @@ module.exports = {
       {
         cpf: '12147852363',
         nome: 'professor',
-        telefone: 125448489,
+        telefone: '(12) 5448-4289',
         funcao: 'dono',
         rua: 'rua 20',
         bairro: 'jardim novo',

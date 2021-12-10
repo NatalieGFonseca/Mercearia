@@ -26,10 +26,10 @@
                         <div class="col-lg-8 content-box">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Consulte estoque</h5>
-                                    <form action="/produtos/estoque" method="GET">
+                                    <h5 class="card-title">Consulte vendas</h5>
+                                    <form action="/funcionarios/vendas" method="GET">
                                         <div class="mb-3">
-                                            <label for="nome" class="form-label">Digite o nome do produto</label>
+                                            <label for="nome" class="form-label">Consulte vendas por funcionário</label>
                                             <input type="text" class="form-control" id="nome" name='nome' >
                                         </div>
 
@@ -45,7 +45,7 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Consulte produto por fornecedor</h5>
+                                    <h5 class="card-title">Consulte produtos vinculados a determinado fornecedor</h5>
                                     <form action="/produtos/fornecedor" method="GET">
                                         <div class="mb-3">
                                             <label for="nome" class="form-label">Digite o fornecedor</label>
@@ -61,11 +61,11 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Filtre os produtos por preço</h5>
-                                    <form action="/produtos/preco" method="GET">
+                                    <h5 class="card-title">Relatório de vendas por produto</h5>
+                                    <form action="/produtos/relatorio" method="GET">
                                         <div class="mb-3">
-                                            <label for="preco_unitario" class="form-label">Digite preco</label>
-                                            <input type="number" min="0" class="form-control" id="preco_unitario" name='preco_unitario' required>
+                                            <label for="nome" class="form-label">Digite o nome do produto</label>
+                                            <input type="text" class="form-control" id="nome" name='nome'>
                                         </div>
                                         <div>
                                             <button type="submit" class="btn btn-outline-success"

@@ -19,7 +19,8 @@
                                     <form method="POST" action="/produtos/<%=produto.id%>?_method=PATCH">
                                         <div class="mb-3">
                                             <label for="preco_unitario" class="form-label">Preço</label>
-                                            <textarea name="preco_unitario" cols='50' rows='1'><%=produto.preco_unitario%></textarea> 
+                                            <textarea name="preco_unitario" cols='50' rows='1'><%=produto.preco_unitario%></textarea>
+                                            <p style="color: indianred;">Digite um valor como o exemplo: <strong>"2.5"</strong></p> 
                                         </div>
                                         
                                         <div>

@@ -1,4 +1,4 @@
-const {Funcionario} = require('../models');
+const {Funcionario, Venda} = require('../models');
 const express = require('express');
 const roteador = express.Router();
 
@@ -32,6 +32,25 @@ roteador.get('/:id/edite', async (req, res)=>{
 
     res.render('funcionarios/edite', {funcionario});
 });
+
+roteador.get('/vendas', async (req, res) => {
+
+    const {nome} = req.query;
+
+    const vendas = await Venda.findAll({
+        include: [
+            {
+                model: Funcionario,
+                where: {
+                    nome: nome
+                }
+            }
+        ]
+    });
+
+    res.render('venda/apresenta', {vendas});
+});
+
 
 roteador.patch('/:id', async (req, res)=>{
 

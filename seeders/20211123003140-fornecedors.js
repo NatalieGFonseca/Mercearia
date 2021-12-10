@@ -6,19 +6,19 @@ module.exports = {
       {
         nome: 'fornecedor1',
         tipo: 'limpeza',
-        telefone: 123456789,
+        telefone: '(12) 3456-5789',
         email: 'fornecedor1@gmail.com'
       },
       {
         nome: 'fornecedor2',
         tipo: 'horti-fruti',
-        telefone: 12324689,
+        telefone: '(12) 3246-2189',
         email: 'fornecedor2@gmail.com'
       },
       {
         nome: 'fornecedor3',
         tipo: 'alimenticio',
-        telefone: 456321789,
+        telefone: '(12) 4563-1789,
         email: 'fornecedor3@gmail.com'
       }
     ], {});

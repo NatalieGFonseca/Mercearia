@@ -1,7 +1,7 @@
 const Fornecedor = (sequelize, DataTypes) => {
     return sequelize.define('Fornecedor', {
         nome: DataTypes.STRING,
-        telefone: DataTypes.INTEGER,
+        telefone: DataTypes.STRING,
         email: DataTypes.STRING,
         tipo: DataTypes.STRING
     });

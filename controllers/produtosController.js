@@ -1,4 +1,4 @@
-const {Produto, Fornecedor, Estoque} = require('../models');
+const {Produto, Fornecedor, Item, Venda} = require('../models');
 const express = require('express');
 const roteador = express.Router();
 const { Op } = require("sequelize");
@@ -41,53 +41,9 @@ roteador.get('/fornecedor', async(req, res)=>{
     });
 
     res.render('produtos/apresenta', {produtos});
+
 });
 
-roteador.get('/estoque', async (req, res) => {
-
-    const {nome} = req.query;
-
-    console.log(nome);
-
-    const produtos = await Estoque.findAll({
-        include: [
-            {
-                model: Produto,
-                where: {
-                    nome: nome
-                }
-            }
-        ]
-    });
-
-    console.log(produtos);
-
-    res.render('estoque/apresenta', {produtos});
-});
-
-roteador.get('/preco', async (req, res) => {
-
-    const preco_unitario = req.body;
-
-    console.log(preco_unitario);
-
-    const produtos = await Estoque.findAll({
-        include: [
-            {
-                model: Produto,
-                where: {
-                    preco_unitario: {
-                        [Op.gte]: preco_unitario
-                    }
-                }
-            }
-        ]
-    });
-
-    console.log(produtos);
-
-    res.render('estoque/apresenta', {produtos});
-});
 
 roteador.patch('/:id', async (req, res)=>{
 	
